@@ -39,7 +39,8 @@ from dataclasses import dataclass, field
 BASE = "https://s3.amazonaws.com/dl.3dsystems.com/binaries/Sensable/"
 
 PROJECT_ROOT = os.path.abspath(
-    os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, os.pardir)
+    # this file lives in install/, one level below the project root
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)
 )
 VENDOR = os.path.join(PROJECT_ROOT, "vendor")
 

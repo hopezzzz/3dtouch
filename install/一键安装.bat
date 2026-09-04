@@ -2,7 +2,7 @@
 rem One-click setup: download the 3D Systems driver and SDK, then install them.
 rem Contents kept ASCII-only so cmd.exe renders it on any code page.
 setlocal
-cd /d "%~dp0code\setup"
+cd /d "%~dp0"
 
 where python >nul 2>nul
 if errorlevel 1 (

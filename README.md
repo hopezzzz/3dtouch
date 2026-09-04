@@ -22,7 +22,7 @@ Python 侧**除标准库外零依赖**，不用 pip 装任何东西。
 
 ## 快速开始
 
-**1. 装驱动和 SDK** —— 双击 `一键安装.bat`
+**1. 装驱动和 SDK** —— 双击 `install\一键安装.bat`
 
 从 3D Systems 官方源下载（约 280 MB），逐个做 SHA-256 校验和 Authenticode 签名验证，
 然后依次运行两个安装程序：
@@ -34,6 +34,9 @@ Python 侧**除标准库外零依赖**，不用 pip 装任何东西。
 
 两个向导都会正常弹出，SDK 那个的路径已经填好，点 Next 即可。SDK 装哪其实都行，
 代码靠环境变量 `OH_SDK_BASE` 找它（安装程序会自动设）。
+
+**不想跑脚本**就看 [install/手动安装.md](install/手动安装.md) ——
+官方直链、安装步骤、校验值、故障排查都在里面。
 
 **只想读数据的话，SDK 可以不装** —— `code/touchpy` 只需要驱动。
 SDK 是给那 40 个演示程序和 C++ 开发用的。
@@ -56,10 +59,9 @@ python code\touchpy\demo_read.py       :: 实时读位置/姿态/关节角/按�
 
 ```
 3dtouch/
-├─ 一键安装.bat        下载驱动和 SDK 并安装
 ├─ Touch启动器.bat     打开厂家程序启动器
+├─ install/            装驱动和 SDK（自动脚本 + 手动说明）
 ├─ code/
-│   ├─ setup/          下载 + 安装脚本
 │   ├─ launcher/       厂家程序启动器（图形 + 命令行）
 │   ├─ touchpy/        Python 接口和示例
 │   └─ touchcpp/       C++ 起点
@@ -67,7 +69,7 @@ python code\touchpy\demo_read.py       :: 实时读位置/姿态/关节角/按�
 └─ vendor/             安装包和官方文档（下载后才有，不在仓库里）
 ```
 
-仓库里只有 `code/` 和两个 `.bat`。**`OpenHaptics/` 和 `vendor/` 不随仓库分发** ——
+仓库里只有 `code/`、`install/` 和 `Touch启动器.bat`。**`OpenHaptics/` 和 `vendor/` 不随仓库分发** ——
 OpenHaptics Developer Edition 的授权明确禁止再分发
 （`OpenHaptics/docs/OpenHapticsDeveloperEditionLicense.txt` 第 2 节：
 "the Authorized User may not use, copy, modify, or distribute the Software"），
@@ -136,11 +138,11 @@ cd code\touchcpp
 build.bat
 run.bat
 
-:: 安装脚本
-一键安装.bat --download-only              :: 只下载，安装包自己去点
-一键安装.bat --sdk-dir C:\OpenHaptics     :: SDK 装别处
-一键安装.bat --all                        :: 加 Unity 插件、诊断工具、文档
-一键安装.bat --check                      :: 校验已下载的文件
+:: 安装
+install\一键安装.bat                       :: 下载 + 安装
+install\一键安装.bat --download-only       :: 只下载，安装包自己去点
+install\一键安装.bat --sdk-dir C:\OpenHaptics
+install\一键安装.bat --check               :: 校验已下载的文件
 ```
 
 ## 两条必须记住的规则
