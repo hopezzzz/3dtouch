@@ -1,0 +1,24 @@
+# ---------------------------------------------------------------------
+# Everything from 3D Systems stays out of this repository.
+#
+# The OpenHaptics Developer Edition licence (OpenHaptics/docs/
+# OpenHapticsDeveloperEditionLicense.txt, section 2) forbids
+# redistributing the SDK: "the Authorized User may not use, copy,
+# modify, or distribute the Software". The same goes for their manuals.
+# The two installers are over GitHub's 100 MB per-file limit anyway.
+#
+# Run  下载安装包.bat  (code/setup/fetch_vendor.py) to fetch all of it
+# from 3D Systems' own download server.
+# ---------------------------------------------------------------------
+vendor/
+OpenHaptics/
+
+# Python
+__pycache__/
+*.pyc
+
+# C++ build output
+code/touchcpp/*.exe
+code/touchcpp/*.obj
+code/touchcpp/*.pdb
+code/touchcpp/*.ilk

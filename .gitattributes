@@ -1,0 +1,12 @@
+# Windows batch files are parsed by cmd.exe, which wants CRLF. Pin it so a
+# clone on any platform still produces working .bat files.
+*.bat text eol=crlf
+
+# Everything else: LF in the repository, LF on checkout.
+*.py   text eol=lf
+*.pyw  text eol=lf
+*.cpp  text eol=lf
+*.h    text eol=lf
+*.md   text eol=lf
+.gitignore   text eol=lf
+.gitattributes text eol=lf
